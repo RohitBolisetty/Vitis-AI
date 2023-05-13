@@ -1,0 +1,34 @@
+
+-----------------------------------------
+DATASET PREPARATION STARTED..
+Command line options:
+ --dataset_dir  :  build/dataset
+ --tfrec_dir    :  build/tfrecords
+ --img_shard    :  2000
+
+Unzipped dataset..
+
+Creating test TFRecord files...
+3 TFRecord files will be created.
+Last TFRecord file will have 1000 images.
+  0%|          | 0/3 [00:00<?, ?it/s]  0%|          | 0/3 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "images_to_tfrec.py", line 251, in <module>
+    run_main()
+  File "images_to_tfrec.py", line 248, in run_main
+    make_tfrec(args.dataset_dir,args.tfrec_dir,args.img_shard)
+  File "images_to_tfrec.py", line 188, in make_tfrec
+    write_tfrec(write_path, dataset_dir+'/train', testImages[start:end])
+  File "images_to_tfrec.py", line 102, in write_tfrec
+    'height': _int64_feature(image_shape[0]),
+  File "images_to_tfrec.py", line 65, in _int64_feature
+    return tf.train.Feature(int64_list=tf.train.Int64List(value=[value]))
+  File "/opt/vitis_ai/conda/envs/vitis-ai-tensorflow2/lib/python3.7/site-packages/google/protobuf/internal/python_message.py", line 542, in init
+    copy.extend(field_value)
+  File "/opt/vitis_ai/conda/envs/vitis-ai-tensorflow2/lib/python3.7/site-packages/google/protobuf/internal/containers.py", line 143, in extend
+    new_values = [self._type_checker.CheckValue(elem) for elem in elem_seq_iter]
+  File "/opt/vitis_ai/conda/envs/vitis-ai-tensorflow2/lib/python3.7/site-packages/google/protobuf/internal/containers.py", line 143, in <listcomp>
+    new_values = [self._type_checker.CheckValue(elem) for elem in elem_seq_iter]
+  File "/opt/vitis_ai/conda/envs/vitis-ai-tensorflow2/lib/python3.7/site-packages/google/protobuf/internal/type_checkers.py", line 155, in CheckValue
+    raise TypeError(message)
+TypeError: <tf.Tensor: shape=(), dtype=int32, numpy=499> has type <class 'tensorflow.python.framework.ops.EagerTensor'>, but expected one of: (<class 'int'>,)

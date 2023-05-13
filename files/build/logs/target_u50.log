@@ -1,0 +1,23 @@
+
+------------------------------------
+3.7.8 | packaged by conda-forge | (default, Nov 17 2020, 23:45:15) 
+[GCC 7.5.0]
+------------------------------------
+Command line options:
+ --target_dir   :  ./build/target_u50
+ --image_dir    :  build/dataset/test
+ --input_height :  200
+ --input_width  :  250
+ --num_images   :  1000
+ --app_dir      :  application
+ --model        :  ./build/compiled_u50/customcnn.xmodel
+------------------------------------
+
+Traceback (most recent call last):
+  File "target.py", line 100, in <module>
+    main()
+  File "target.py", line 96, in main
+    make_target(args.target_dir, args.image_dir, args.input_height, args.input_width, args.num_images, args.app_dir, args.model)
+  File "target.py", line 47, in make_target
+    images = os.listdir(image_dir)
+FileNotFoundError: [Errno 2] No such file or directory: 'build/dataset/test'

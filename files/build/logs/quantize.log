@@ -1,0 +1,26 @@
+
+------------------------------------
+TensorFlow version :  2.10.0
+3.7.8 | packaged by conda-forge | (default, Nov 17 2020, 23:45:15) 
+[GCC 7.5.0]
+------------------------------------
+Command line options:
+ --float_model  :  build/float_model/f_model.h5
+ --quant_model  :  build/quant_model/q_model.h5
+ --batchsize    :  50
+ --tfrec_dir    :  build/tfrecords
+ --evaluate     :  True
+------------------------------------
+
+Traceback (most recent call last):
+  File "quantize.py", line 126, in <module>
+    main()
+  File "quantize.py", line 122, in main
+    quant_model(args.float_model, args.quant_model, args.batchsize, args.tfrec_dir, args.evaluate)
+  File "quantize.py", line 56, in quant_model
+    float_model = load_model(float_model)
+  File "/opt/vitis_ai/conda/envs/vitis-ai-tensorflow2/lib/python3.7/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/opt/vitis_ai/conda/envs/vitis-ai-tensorflow2/lib/python3.7/site-packages/keras/saving/save.py", line 227, in load_model
+    f"No file or directory found at {filepath_str}"
+OSError: No file or directory found at build/float_model/f_model.h5

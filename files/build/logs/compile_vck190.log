@@ -1,0 +1,5 @@
+[INFO] Namespace(batchsize=1, inputs_shape=None, layout='NHWC', model_files=['build/quant_model/q_model.h5'], model_type='tensorflow2', named_inputs_shape=None, out_filename='/tmp/customcnn_DPUCVDX8G_ISA3_C32B6_org.xmodel', proto=None)
+[ERROR] Not found the file or directory: /workspace/build/quant_model/q_model.h5
+**************************************************
+* VITIS_AI Compilation - Xilinx Inc.
+**************************************************
